@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-6 mx-auto mt-4" *ngIf="!showLogin">
+    <h4 class="text-center">Sign Up</h4>
+    <form #signUpForm="ngForm" (ngSubmit)="signUpLogin(signUpForm.value)">
+      
+      <div class="form-group">
+        <label for="">User Name</label>
+        <input type="text" class="form-control" ngModel name="user">
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      </div>
+      <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" class="form-control" ngModel name="password">
+      </div>
+      <div class="form-group">
+        <label for="">EMail</label>
+        <input type="email" class="form-control" ngModel name="email">
+      </div>
+      <button type="submit" class="btn btn-primary mt-4">Sign Up</button>
+      <a class="d-block" (click)="openLogin()">Already have a account? Click to Login</a>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6 mx-auto mt-4" *ngIf="showLogin">
+    <p class="alert alert-danger" *ngIf="alertMsg" role="alert">{{authError}}</p>
+    <h4 class="text-center">Login</h4>
+    <form #login="ngForm" (ngSubmit)="loginForm(login.value)">
+      <div class="form-group">
+        <label for="">EMail</label>
+        <input type="email" class="form-control" ngModel name="email">
+      </div>
+      <div class="form-group">
+        <label for="">Password</label>
+        <input type="password" class="form-control" ngModel name="password">
+      </div>
+      <button type="submit" class="btn btn-primary mt-4">Login</button>
+      <a class="d-block" (click)="openSignup()">Don't have a account? Click to Sign Up</a>
+    </form>
+  </div>
+</div>

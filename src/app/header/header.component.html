@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-xl navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">E-COMM</a>
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo2" aria-controls="navbarTogglerDemo2" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse show" id="navbarTogglerDemo2" [ngSwitch]="menuType">
+        <form class="d-flex ms-auto">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        <ul class="navbar-nav ms-auto mb-2 mb-xl-0" *ngSwitchCase="'default'">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="seller">Seller</a>
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-link" href="#" tabindex="-1">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1">Cart(0)</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-xl-0" *ngSwitchCase="'seller'">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="seller-addProduct">Add Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="seller-info">Product List</a>
+          </li>
+          <!-- <li class="nav-item"> 
+            <a class="nav-link" href="#" tabindex="-1">Cart(0)</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" tabindex="-1">Logout</a>
+          </li>
+          <li><h5 class="mt-2">Welcome {{sellerName | titlecase}}</h5></li>
+        </ul>
+      </div>
+    </div>
+  </nav>

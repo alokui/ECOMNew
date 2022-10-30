@@ -1,0 +1,26 @@
+{
+  "seller": [
+    {
+      "user": "Alok",
+      "password": "123",
+      "email": "alok@alok.com",
+      "id": 1
+    },
+    {
+      "user": "Ved",
+      "password": "123",
+      "email": "ved@alok.com",
+      "id": 2
+    }
+  ],
+
+  "products": [
+    {
+      "productName": "Apple",
+      "productPrice": 10000,
+      "productCategory": "Mobile",
+      "productDesc" : "ABC",
+      "productImage" : "sdfds"
+    }
+  ]
+}
